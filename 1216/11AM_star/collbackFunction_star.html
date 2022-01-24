@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <!-- <script>
+        //매개변수로 전달되는 함수를 callback함수라고 부름
+        //ajax에서도 많이사용되니까 중요 *****
+        //함수 선언
+        function callThreeTimes(callback){
+            for(var i=0;i<3; i++){
+                callback();
+            }
+        }
+        //변수 선언
+        var callback = function(){
+            alert('함수 호출');
+        }
+        //함수 호출
+        callThreeTimes(callback);
+    </script> -->
+    
+    <script> //익명 콜백 함수
+        //위 script와 동일한데 문법만 다른거
+        
+        //함수 선언
+        function callThreeTimes(callback){
+            for(var i=0; i<3; i++){
+                callback();
+            }
+        }
+        //함수 호출
+        callThreeTimes(function(){
+            alert('함수 호출'); //위에서 callback()이 함수니까 그냥 함수가 들어오면 무조건 alert하게되어있으
+        });
+    </script>
+</body>
+</html>

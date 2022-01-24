@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkForm(){
+            var str= document.frm.name.value;
+            var regExp = /^[a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+            if(!regExp.test(str)){ //test() : 매개변수 값이 정규 표현식과 일치하는 문자열이 잇는지 판단하여
+                // true / false 반환
+                alert("이름을 숫자로 시작할 수 없음!");
+                return;
+            }
+        };
+    </script>
+    <form name="frm">
+        이름 : <input type="text" name="name">
+        <input type="submit" value="전송" onclick="checkForm()">
+    </form>
+</body>
+</html>

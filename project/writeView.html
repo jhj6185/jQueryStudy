@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+    /* 초기화 :브라우저에서 제공하는 것을초기화 할거임 */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: sans-serif;
+        width:100%;
+        padding-top: 38px;
+        padding-bottom: 20px;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    img {
+        border: 0;
+    }
+    
+    
+    .total_content{
+        margin-top: 50px;
+        width: 975px;
+        height: 700px;
+        background-color: white;
+    }
+    
+    
+    
+    
+    /* contentBox 본문 */
+    .contentBox{
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+    
+    /* leftbar 수강과목 */
+    .site-font-color {
+        font-weight: bold;
+        line-height: 40px;
+        font-size: 20px;
+        color: pink;
+    }
+    div.container{
+        float: left;
+        border: 1px solid black;
+        text-align: center;
+        line-height: 50px;
+        width: 150px;
+        display: block;
+        padding: 5px 0 5px 0;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .select:hover{
+        background-color: pink;
+    }
+    
+    
+    
+    
+    /* 글쓰기 뷰 */
+    .hrStyle{
+        margin-top:10px;
+        margin-bottom:25px;
+        
+    }
+    
+    /* size */
+    .size710{
+        width:710px !important;
+        margin-left: 50px;
+    }
+    .title{
+        font-weight: bold;
+        line-height: 40px;
+        font-size: 30px;
+        color: black;
+    }
+    
+    .gray_btn_down{
+         width:100px;
+     height : 40px;
+     border-radius: 10%;
+     border: 0px;
+     background-color: #ededed;
+     color: black;
+     font-weight: 700;
+     margin:5px;
+     }
+    .orange_smallarea {
+     width: 550px !important;
+     height: 70px !important;
+     padding: 10px !important;
+     box-sizing: border-box !important;
+     border: solid 2px #ededed !important;
+     border-radius: 5px !important;
+     font-size: 16px !important;
+     resize: both !important;
+    }
+    .gray_btn_big{
+        width:100px ;
+        height : 70px ;
+        border-radius: 10% ;
+        border: 0px ;
+        background-color: #ededed ;
+        color: black ;
+        font-weight: 700 ;
+        float: right ;
+        margin:0px 5px 5px 5px;
+     }
+    
+    
+    table { 
+        font-size: 12px;
+        border-top: 1px solid #dadada;;
+        padding-bottom:20px ;
+     }
+    
+    .tablebgtable100{
+         border-bottom: 1px solid #bbb;
+         width: 100px;
+         height: 40px;
+         background: #ebeaeae3;
+         padding:20px;
+         text-align: center;
+     }
+     .tablebg2{
+         border-bottom: 1px solid #bbb;
+         width: 700px;
+         padding-left: 10px;
+     }
+     
+     /* 현주 */
+     .thumbnail {
+        float: left;
+    }
+    
+    .description {
+        float: left;
+        margin-left: 10px;
+        width: 80;
+        height: 60;
+    }
+    
+    .description>strong {
+        display: block;
+        width: 170px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .tab_image_size {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .tab_item>ul {
+        margin-left: -2px !important;
+        margin-top: -10px;
+    }
+    
+    .nameBigbox {
+        padding-right: 0px;
+    }
+</style>
+</head>
+
+<body>
+	<div class="back"></div>
+	<div class="col-lg-12 ">
+		<div class="col-lg-2"></div>
+
+		<div class="col-lg-8">
+			<jsp:include page="header.jsp" />
+
+			<!-- 콘텐츠 시작 -->
+			<div class="total_content">
+				<div class="contentBox col-lg-12">
+					<div class="container col-lg-3">
+						<h2 id="site_header" class="site-font-color">수강과목</h2>
+						<form name="input" action="#" method="get">
+							<select name="subject">
+								<option value="Java">Java</option>
+								<option value="C">C</option>
+								<option value="Python">Python</option>
+							</select>
+							<ul class="select">
+								<li id="menu_item">강의계획서</li>
+							</ul>
+							<ul class="select">
+								<li id="menu_notice">공지사항</li>
+							</ul>
+							<ul class="select">
+								<li id="menu_qna">질의응답</li>
+							</ul>
+							<ul class="select">
+								<li id="menu_inforoom">자료실</li>
+							</ul>
+							<ul class="select">
+								<li id="menu_report">과제</li>
+							</ul>
+						</form>
+					</div>
+
+
+					<div class="size710 col-lg-6">
+						<h3 class="title">강의 자료</h3>
+							<hr class="hrStyle table700">
+							<table class="table700">
+								<tr>
+									<td class="tablebgtable100">제목
+									</th>
+									<td class="tablebg2">야외 실습용 현지 조사표 양식
+									</th>
+								</tr>
+								<tr>
+									<td class="tablebgtable100">작성자</td>
+									<td class="tablebg2">정진문</td>
+								</tr>
+								<tr>
+									<td class="tablebgtable100">게시일</td>
+									<td class="tablebg2">2021.12.01 오후 12:48</td>
+								</tr>
+							</table>
+							<p class="hrStyle">
+								야외 실습용 현지 조사표 양식입니다. <br>
+								<br> 필요하면 다운받아 이용하시기 바랍니다. <br>
+								<br>
+							</p>
+							<button class="gray_btn_down">댓글</button>
+							<button class="gray_btn_down">목록</button>
+							<textarea class="orange_smallarea" placeholder="댓글을 입력하세요"></textarea>
+							<button class="gray_btn_big">확인</button>
+					</div>
+				</div>
+                
+			</div>
+		</div>
+		
+	</div>
+	<div class="col-lg-2"></div>
+	<jsp:include page="footer.jsp" />
+	
+</body>
+
+</html>

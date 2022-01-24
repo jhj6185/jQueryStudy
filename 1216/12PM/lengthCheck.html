@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="frm">
+        아이디 : <input type="text" name="id"><br>
+        비밀번호 : <input type="password" name="pwd"><br>
+        <input type="submit" value="전송" onclick="chkLogin()">
+    </form>
+
+    <script>
+        function chkLogin(){
+            if(document.frm.id.value.length<4 || document.frm.name.value.length>12){
+                alert("아이디는 4~12자 이내로 입력 가능");
+                document.frm.id.select();
+                return false;
+            }else if(document.frm.pwd.value.length<8){
+                alert("비밀번호는 8자 이상으로 입력 가능");
+                return false;
+            }
+            frm.submit();
+        }
+    </script>
+</body>
+</html>

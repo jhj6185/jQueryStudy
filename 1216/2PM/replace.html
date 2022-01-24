@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var regExp=/^j/igm; //igm이 대문자 소문자 무시, 줄바꿈 무시, ^는 j로 시작하는거 찾겟다
+        var string = 'Javascript\njQuery\nAjax';
+        var output= string.replace(regExp,'+$&+');
+        alert(output);
+    </script>
+</body>
+</html>

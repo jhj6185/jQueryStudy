@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $.ajax("data.html"),{
+                success: function(data){
+                    $('body').append(data);
+                }
+            }
+        })//spring에서 댓글다는 예제 할 때 많이사용 ****
+    </script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url:"data.html", //url, success 다 옵션
+                success:function(data){
+                    $('body').append(data);
+                }
+            })
+        })
+    </script>
+    
+</body>
+</html>

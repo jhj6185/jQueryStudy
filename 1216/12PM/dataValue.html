@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery/jquery-3.6.0.js"></script>
+</head>
+<body>
+  <form name="loginFrm" action="member/resultMember.jsp" method="post">
+      <p>아이디 : <input type="text" name="userId"></p>
+      <p>비밀번호 : <input type="password" name="userPwd"></p>
+      <p><input type="button" value="전송" onclick="checkLogin()"></p>
+  </form>  
+
+  <script>
+      function checkLogin(){
+          var form = document.loginFrm;
+          if(form.userId.value==""){
+              alert("아이디를 입력해주세요.");
+              form.userId.focus();
+              return false;
+          }else if(form.userPwd.value==""){
+              alert("비밀번호를 입력해주세요.");
+              form.userPwd.focus();
+              return false; //틀렸을 때는 return문에 의해서 function을 빠져나감
+          }//return은 무조건 function 자체를 빠져나가는거야!!! return true던 return 값이던 뭐던!!***
+          form.submit(); //로그인 성공시에는 form에서 submit하기위해서
+      }
+  </script>
+
+</body>
+</html>

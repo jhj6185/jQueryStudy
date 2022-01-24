@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkForm(){
+            var regExp = /Java/i; //var regExp = new RegExp('java','i') i가 머냐면 ignore이라는뜻 
+            // i 가 있어서 
+            //대소문자 상관없이java가 섞인 글자를 찾아주는 것
+            var str = document.frm.title.value;
+            var result = regExp.exec(str);
+            alert(result[0]);
+        }
+    </script>
+    <form name="frm">
+        제목 : <input type="text" name="title">
+        <input type="submit" value="전송" onclick="checkForm()">
+    </form>
+</body>
+</html>

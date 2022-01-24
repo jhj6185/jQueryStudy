@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../jquery/jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <img src="../../image/sion.jpg" height="200px" width="200px">
+    <img src="../../image/pengsu.jpg" height="200px" width="200px">
+    <img src="../../image/cat.jpg" height="200px" width="200px">
+    <script>
+        $(document).ready(function(){
+            $('img').css('width',250);
+            //함수를 2초마다 실행
+            setInterval(function(){
+                //첫번째 이미지를 마지막으로
+                $('img').first().appendTo('body'); //appendTo는 <body>태그 안에다가 추가하는데 대신 <body>태그의 맨
+                    //마지막으로 추가함
+            },2000);
+        })
+    </script>
+    
+</body>
+</html>

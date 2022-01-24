@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery/jquery-3.6.0.js"></script>
+    <style>
+        div{
+            background-color: yellow;
+            width:200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div>버튼을 누르면 그림의 크기가 바뀝니다</div>
+    <button class="b1">가로 100픽셀</button>
+    <button class="b2">가로 200픽셀</button>
+    <button class="b3">가로 300픽셀</button>
+    <img src="../../image/sion.jpg">
+    <script>
+        $(document).ready(function(){
+            $("button.b1").click(function(){
+                $("img").animate({
+                    width: '100px'
+                });
+            });
+            $("button.b2").click(function(){
+                $("img").animate({
+                    width: '200px'
+                });
+            });
+            $("button.b3").click(function(){
+                $("img").animate({
+                    width: '300px'
+                });
+            });
+        })
+    </script>
+</body>
+</html>

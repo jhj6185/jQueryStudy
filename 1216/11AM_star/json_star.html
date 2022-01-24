@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <script>// 중요 stringfy랑 parse는 계속 자주 쓰게됨 *****
+        var obj={
+            name: '코난',
+            age: 10
+        } // {} 가 javascript에서는 객체인데 이걸 객체로 사용하려면 parsing하는게 필요함 그래서 parse를 쓸거임***
+        alert(JSON.stringify(obj)); //{"name":"코난","age":10} 으로 출력됨
+    </script>
+
+    <script>
+        var obj={
+            name: '코난',
+            age: 10
+        }
+        var objCopy = JSON.parse(JSON.stringify(obj)); //parse를 하려면 stringify(obj)가 반드시 필요
+        alert(objCopy.name+" : "+objCopy.age); //코난 : 10 으로 출력됨
+    </script>
+</body>
+</html>

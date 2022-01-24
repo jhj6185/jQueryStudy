@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var regExp=/a/;
+        var string = 'Javascript jquery Ajax';
+        var output = string.replace(regExp, '+$&+'); // a의 앞뒤로 +가 붙음
+        alert(output);
+    </script>
+
+    <script>
+        var regExp=/(a)(v)(a)/; //ava가 붙어있는걸 원할때
+        var string = 'Javascript jquery Ajax';
+        var output=string.replace(regExp,'+$1=$2=$3+'); //+a=v=a+
+        alert(output);
+    </script>
+</body>
+</html>

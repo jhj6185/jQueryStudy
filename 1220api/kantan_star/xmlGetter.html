@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: 'http://apis.data.go.kr/1262000/TravelBanService/getTravelBanList?serviceKey=7%2BKYOJKSHPexw8fbYANJcLaGezTYYbiL3H%2FstWK6%2F3KRHxTakSqUxKubRjZG0Oil0zaM1M7z4WARy6ZmSrCSVw%3D%3D&numOfRows=10&pageNo=1&countryName=%EA%B0%80%EB%82%98&countryEnName=Ghana',
+            success: function(data){
+                $(data).find('item').each(function(){
+                    var banNote = $(this).find('banNote').text();
+                    var countryName=$(this).find('countryName').text();
+                    var imgUrl = $(this).find('imgUrl').text();
+                    $('<p></p>').text(countryName+':'+banNote).appendTo('body');
+                    $('body').append('<img src="'+imgUrl+'" alt="해당 국가 이미지 없음" width="100"/></p>');
+                })
+            }
+        })
+    })
+</script>
+</html>

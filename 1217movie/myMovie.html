@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="myMovieCss.css">
+    <script src="../jquery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <hgroup id="title">
+        <h1 data-name="information">information</h1>
+        <h1 data-name="character">Character</h1>
+        <h1 data-name="multimedia">Multimedia</h1>
+    </hgroup>
+    <section id="container">
+        <div id="main" data-name="main" class="active">
+            <img src="images/movie2.jpg" width="100%"/>
+        </div>
+        <div id="information" data-name="information">
+            <img src="images/poster.jpg" width="40%"/>
+            <div class="description">
+                <p>신세계라는 영화는 아주띵작입니다 왜냐하면 액션이 죽이기 때문입니다 ㅉ가짝짝짝짝짞짝</p>
+            </div>
+        </div>
+        <div id="character" data-name="character">
+            <a href="#">Left Button</a>
+            <a href="#">Right Button</a>
+            <article class="show">
+                <h1>Scarlett O'Hara</h1>
+                <img src="images/celebrity1.jpg">
+                <p>하다못해 저 깡패 새끼들도 나를 믿고 따르는데, 왜 너네들은 날 못 믿는데?<br>
+                    -이자성(이정재)
+                    </p>
+            </article>
+            <article>
+                <h1>Scarlett O'Hara</h1>
+                <img src="images/celebrity2.jpg">
+                <p>
+                    "죽기 딱 좋은 날씨네"<br>
+                    -이중구(박성웅)
+                </p>
+            </article>
+            <article>
+                <h1>Scarlett O'Hara</h1>
+                <img src="images/celebrity3.jpg">
+                <p>"독하게 굴어.....그래야 니가 살아......"
+                    <br>-정청(황정민)
+                </p>
+            </article>
+        </div>
+        <!-- 추가예정 -->
+        <div id="multimedia" data-name="multimedia">
+            <!-- <video src="videos/gonewith.mp4" width="940" height="480" controls="controls"></video> -->
+            <iframe width="940" height="480" src="https://www.youtube.com/embed/hwl4TsgV8ao" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <nav id="main_navigation">
+        <ul>
+            <li><a href="#" data-target="information">Movie info</a></li>
+            <li><a href="#" data-target="character">Character</a></li>
+            <li><a href="#" data-target="multimedia">Multimedia</a></li>
+            <li><a href="#">Download</a></li>
+        </ul>
+    </nav>
+    
+</body>
+<!-- <script>
+    $(document).ready(function(){
+        //내비게이션 버튼 클릭
+        $('#main_navigation a').click(function(){
+            var target=$(this).attr('data-target');
+            alert(target);
+            $(':not([data-name='+target+'])').removeClass('active');
+            $('[data-name='+target+']').addClass('active');
+        });
+        //캐릭터 이동 버튼 구현
+        var currentPosition= 1;
+        $('#character>a:nth-child(1)').click(function(){
+            currentPosition-=1;
+            if(currentPosition<1){
+                currentPosition=3;
+            }
+            $('article').removeClass('show');
+            $('article:nth-of-type('+currentPosition+')').addClass('show');
+        });
+
+        $('#character>a:nth-child(2)').click(function(){
+            currentPosition+=1;
+            if(currentPosition>3){
+                currentPosition=1;
+            }
+            $('article').removeClass('show');
+            $('article:nth-of-type('+currentPosition+')').addClass('show');
+        }); 
+    })
+
+    
+</script> -->
+<script>
+    $(document).ready(function(){
+        $('#main_navigation a').click(function(){
+            var target = $(this).attr('data-target');
+            alert(target);
+            $(':not([data-name='+target+'])').removeClass('active');
+            $('[data-name='+target+']').addClass('active');
+        })
+    })
+
+    var currentPosition = 1;
+    $('#character>a:nth-child(1)').click(function(){
+        currentPosition-=1;
+        if(currentPosition<1){
+            currentPosition=3;
+        }
+        $('article').removeClass('show');
+        $('article:nth-of-type('+currentPosition+')').addClass('show');
+    });
+    $('#character>a:nth-child(2)').click(function(){
+        currentPosition+=1;
+        if(currentPosition>3){
+            currentPosition=1;
+        }
+        $('article').removeClass('show');
+        $('article:nth-of-type('+currentPosition+')').addClass('show');
+    })
+</script>
+</html>
